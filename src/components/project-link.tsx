@@ -9,7 +9,7 @@ interface Props {
 	excerpt: string;
 }
 
-export const ProjectPreview = ({ title, slug, excerpt }: Props) => {
+export const ProjectLink = ({ title, slug, excerpt }: Props) => {
 	return (
 		<article>
 			<Link to={`/projects${slug}`}>

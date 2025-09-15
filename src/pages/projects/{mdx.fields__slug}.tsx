@@ -3,20 +3,23 @@ import { Seo } from '../../components/seo';
 import { graphql, PageProps } from 'gatsby';
 import { MarkdownWrapper } from '../../components/markdown-wrapper';
 import { markdownStyles } from '../../styles/markdown';
+import { Layout } from '../../components/layout';
 
 const ProjectPage = ({
 	children,
 	data,
 }: PageProps<Queries.ProjectByIdQuery>) => {
 	return (
-		<main>
+		<Layout>
 			<article>
-				<h1 className={markdownStyles.h1}>
-					{data.mdx?.frontmatter?.title}
-				</h1>
-				<MarkdownWrapper>{children}</MarkdownWrapper>
+				<div className="mx-auto max-w-3xl">
+					<h1 className={markdownStyles.h1}>
+						{data.mdx?.frontmatter?.title}
+					</h1>
+					<MarkdownWrapper>{children}</MarkdownWrapper>
+				</div>
 			</article>
-		</main>
+		</Layout>
 	);
 };
 
