@@ -11,6 +11,7 @@ export const useSiteMetadata = () => {
 			site {
 				siteMetadata {
 					title
+					author
 					description
 					image
 					siteUrl

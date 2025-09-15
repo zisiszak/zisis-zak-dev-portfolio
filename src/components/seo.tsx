@@ -24,8 +24,10 @@ export const Seo = ({ title, description }: Props) => {
 	return (
 		<>
 			<title>{seo.title}</title>
-			<meta name="description" content={seo.description} />
-			<meta name="image" content={seo.image} />
+			{seo.description && (
+				<meta name="description" content={seo.description} />
+			)}
+			{seo.image && <meta name="image" content={seo.image} />}
 		</>
 	);
 };
