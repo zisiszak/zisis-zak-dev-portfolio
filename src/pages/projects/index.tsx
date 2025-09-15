@@ -18,6 +18,7 @@ const ProjectsPage = ({ data }: PageProps<Queries.AllProjectsQuery>) => {
 							id={node.id}
 							excerpt={node.excerpt!}
 							slug={node.fields?.slug!}
+							repositoryUrl={node.frontmatter?.repositoryUrl}
 						/>
 					))}
 				</div>
@@ -28,7 +29,7 @@ const ProjectsPage = ({ data }: PageProps<Queries.AllProjectsQuery>) => {
 
 export const query = graphql`
 	query AllProjects {
-		allMdx(sort: { frontmatter: { title: DESC } }) {
+		allMdx(sort: { frontmatter: { title: ASC } }) {
 			nodes {
 				frontmatter {
 					title
@@ -39,7 +40,7 @@ export const query = graphql`
 					slug
 				}
 				id
-				excerpt(pruneLength: 100)
+				excerpt(pruneLength: 150)
 			}
 		}
 	}
