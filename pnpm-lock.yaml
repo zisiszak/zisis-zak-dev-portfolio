@@ -11,6 +11,9 @@ importers:
       '@mdx-js/react':
         specifier: ^3.1.1
         version: 3.1.1(@types/react@18.3.24)(react@18.3.1)
+      '@sindresorhus/slugify':
+        specifier: ^3.0.0
+        version: 3.0.0
       '@tailwindcss/postcss':
         specifier: ^4.1.13
         version: 4.1.13
@@ -54,6 +57,9 @@ importers:
         specifier: 4.1.13
         version: 4.1.13
     devDependencies:
+      '@types/mdx':
+        specifier: ^2.0.13
+        version: 2.0.13
       '@types/node':
         specifier: ^20.11.19
         version: 20.19.14
@@ -1298,9 +1304,17 @@ packages:
     resolution: {integrity: sha512-V9nR/W0Xd9TSGXpZ4iFUcFGhuOJtZX82Fzxj1YISlbSgKvIiNa7eLEZrT0vAraPOt++KHauIVNYgGRgjc13dXA==}
     engines: {node: '>=10'}
 
+  '@sindresorhus/slugify@3.0.0':
+    resolution: {integrity: sha512-SCrKh1zS96q+CuH5GumHcyQEVPsM4Ve8oE0E6tw7AAhGq50K8ojbTUOQnX/j9Mhcv/AXiIsbCfquovyGOo5fGw==}
+    engines: {node: '>=20'}
+
   '@sindresorhus/transliterate@0.1.2':
     resolution: {integrity: sha512-5/kmIOY9FF32nicXH+5yLNTX4NJ4atl7jRgqAJuIn/iyDFXBktOKDxCvyGE/EzmF4ngSUvjXxQUQlQiZ5lfw+w==}
     engines: {node: '>=10'}
+
+  '@sindresorhus/transliterate@2.0.0':
+    resolution: {integrity: sha512-lRx63oCHxeJ90DqIgmbxH1PQmiBDY1wVaLzB4hK0d/xS5BrG1iZO3HdCJS/DQJk6GJ8xHDev8OMI7iGxvE1ZUA==}
+    engines: {node: '>=20'}
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
@@ -2771,6 +2785,10 @@ packages:
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+
+  escape-string-regexp@5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    engines: {node: '>=12'}
 
   eslint-config-react-app@6.0.0:
     resolution: {integrity: sha512-bpoAAC+YRfzq0dsTk+6v9aHm/uqnDwayNAXleMypGl6CpxI9oXXscVHo4fk3eJPIn+rsbtNetB4r/ZIidFIE8A==}
@@ -7872,10 +7890,17 @@ snapshots:
       '@sindresorhus/transliterate': 0.1.2
       escape-string-regexp: 4.0.0
 
+  '@sindresorhus/slugify@3.0.0':
+    dependencies:
+      '@sindresorhus/transliterate': 2.0.0
+      escape-string-regexp: 5.0.0
+
   '@sindresorhus/transliterate@0.1.2':
     dependencies:
       escape-string-regexp: 2.0.0
       lodash.deburr: 4.1.0
+
+  '@sindresorhus/transliterate@2.0.0': {}
 
   '@socket.io/component-emitter@3.1.2': {}
 
@@ -9620,6 +9645,8 @@ snapshots:
   escape-string-regexp@2.0.0: {}
 
   escape-string-regexp@4.0.0: {}
+
+  escape-string-regexp@5.0.0: {}
 
   eslint-config-react-app@6.0.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.2))(eslint@7.32.0)(typescript@5.9.2))(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.2))(babel-eslint@10.1.0(eslint@7.32.0))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.2))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.37.5(eslint@7.32.0))(eslint@7.32.0)(typescript@5.9.2):
     dependencies:

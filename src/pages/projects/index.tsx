@@ -9,10 +9,11 @@ const ProjectsPage = ({ data }: PageProps<Queries.AllProjectsQuery>) => {
 			<div className="flex flex-col gap-8">
 				{data.allMdx.nodes.map((node) => (
 					<ProjectPreview
+						key={node.fields?.slug}
 						title={node.frontmatter!.title!}
 						id={node.id}
 						excerpt={node.excerpt!}
-						slug={node.frontmatter!.slug!}
+						slug={node.fields?.slug!}
 					/>
 				))}
 			</div>
@@ -27,8 +28,10 @@ export const query = graphql`
 				frontmatter {
 					title
 					technologies
-					slug
 					repositoryUrl
+				}
+				fields {
+					slug
 				}
 				id
 				excerpt(pruneLength: 100)

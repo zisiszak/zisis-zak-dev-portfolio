@@ -12,7 +12,7 @@ interface Props {
 export const ProjectPreview = ({ title, slug, excerpt }: Props) => {
 	return (
 		<article>
-			<Link to={`/projects/${slug}`}>
+			<Link to={`/projects${slug}`}>
 				<h2>{title}</h2>
 				<p>{excerpt}</p>
 			</Link>

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Seo } from '../../components/seo';
 import { graphql, PageProps } from 'gatsby';
+import { MarkdownWrapper } from '../../components/markdown-wrapper';
+import { markdownStyles } from '../../styles/markdown';
 
 const ProjectPage = ({
 	children,
@@ -9,8 +11,10 @@ const ProjectPage = ({
 	return (
 		<main>
 			<article>
-				<h2>{data.mdx?.frontmatter?.title}</h2>
-				{children}
+				<h1 className={markdownStyles.h1}>
+					{data.mdx?.frontmatter?.title}
+				</h1>
+				<MarkdownWrapper>{children}</MarkdownWrapper>
 			</article>
 		</main>
 	);

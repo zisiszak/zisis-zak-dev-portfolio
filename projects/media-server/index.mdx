@@ -1,7 +1,17 @@
 ---
-title: "Media Server"
-slug: "media-server"
-technologies: ["TypeScript", "HTML", "CSS", "NodeJS", "React", "Express", "SQLite", "Kysely", "styled-components"]
+title: 'Media Server'
+technologies:
+    [
+        'TypeScript',
+        'HTML',
+        'CSS',
+        'NodeJS',
+        'React',
+        'Express',
+        'SQLite',
+        'Kysely',
+        'styled-components',
+    ]
 ---
 
 This project spawned out of my desire to learn. I needed a concept to start and decided on a Node/Express HTTP media server that would serve videos and photos to a web frontend. Importantly, I wanted to do as much as I could from scratch.
@@ -19,14 +29,14 @@ From there, any idea was an opportunity. I wanted metadata extraction, so I used
 - Metadata extraction via `ffmpeg` and `image-size`.
 - Thumbnail generation upon media import.
 - Generation of optimised image files upon import (including thumbnails).
-  - Multiple sizes generated to suit various client display modes.
+    - Multiple sizes generated to suit various client display modes.
 
 ### Plugins and Platforms
 
 - Generic models for external platforms, profiles, and communities.
 - Custom, type-safe plugin system.
-  - Plugins can utilise different PluginModule contracts (eg. PlatformMetadataExtractor, PlatformContentExtractor, PlatformManager).
-  - Plugins are loaded via a manifest listing all modules.
+    - Plugins can utilise different PluginModule contracts (eg. PlatformMetadataExtractor, PlatformContentExtractor, PlatformManager).
+    - Plugins are loaded via a manifest listing all modules.
 
 ### User accounts
 
