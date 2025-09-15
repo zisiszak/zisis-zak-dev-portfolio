@@ -1,0 +1,53 @@
+---
+title: "Media Server"
+slug: "media-server"
+technologies: ["TypeScript", "HTML", "CSS", "NodeJS", "React", "Express", "SQLite", "Kysely", "styled-components"]
+---
+
+This project spawned out of my desire to learn. I needed a concept to start and decided on a Node/Express HTTP media server that would serve videos and photos to a web frontend. Importantly, I wanted to do as much as I could from scratch.
+
+The first iteration was a proof-of-concept. I familiarised myself with Express's routing system and Node's file system API. I then set up a simple server that would read and serve video files from the filesystem. I paired it with a rudimentary HTML rendering implementation. It was simple, but it worked.
+
+From there, any idea was an opportunity. I wanted metadata extraction, so I used a Node ffmpeg library to implement it. Thumbnail generation went the same way. A more robust model followed. The idea of a database solution floated in my head and I didn't hesitate to add SQLite to the mix. At some point I even wrote a type-safe query builder for fun before switching over to Kysely. The efforts were well worth the deeper understanding gained.
+
+## Features
+
+### Media Importing and Optimisation
+
+- Upload and import multiple files.
+- Exact duplicate detection via file hashing.
+- Metadata extraction via `ffmpeg` and `image-size`.
+- Thumbnail generation upon media import.
+- Generation of optimised image files upon import (including thumbnails).
+  - Multiple sizes generated to suit various client display modes.
+
+### Plugins and Platforms
+
+- Generic models for external platforms, profiles, and communities.
+- Custom, type-safe plugin system.
+  - Plugins can utilise different PluginModule contracts (eg. PlatformMetadataExtractor, PlatformContentExtractor, PlatformManager).
+  - Plugins are loaded via a manifest listing all modules.
+
+### User accounts
+
+- Registration, login and logout endpoints.
+- JSON Web Token cookie authorisation.
+- Salted password hashing.
+- Middlewares for validating user access to endpoints and media.
+- User-specific media metadata (eg. ratings, tags, favourites).
+
+### Web client
+
+Though backend was the main focus, the frontend did have some useful (and fun) features.
+
+- Infinite scroll gallery.
+- Custom image preloader.
+- Lightbox implementation using `yet-another-react-lightbox`.
+- Multiple gallery display modes (eg. square grid, list, experimental auto-grid).
+- Filtering options (eg. search string, minimum user rating, favourited).
+- Sorting options (eg. external platform like count, title).
+
+### Configuration
+
+- Server configuration in the form of a config file, launch args, or environment variables.
+- Adjust key parameters for hosting config, library and ffmpeg paths, secret keys, etc.
