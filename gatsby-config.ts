@@ -2,7 +2,8 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
 	siteMetadata: {
-		title: 'Zisis Zak - Dev Portfolio',
+		title: 'A Portfolio',
+		author: 'Zisis Zak Tsiouklas',
 		siteUrl: 'https://www.yourdomain.tld',
 		image: '',
 		description: '',
@@ -52,6 +53,14 @@ const config: GatsbyConfig = {
 				path: './projects/',
 			},
 			__key: 'projects',
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /\.inline\.svg$/,
+				},
+			},
 		},
 	],
 };
