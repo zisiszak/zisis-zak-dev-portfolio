@@ -1,7 +1,7 @@
 import { MDXComponents } from 'mdx/types';
 
 const h1 =
-	'text-2xl lg:text-3xl font-bold leading-10 lg:leading-11 lg:mb-6 mb-5';
+	'text-3xl lg:text-4xl font-bold leading-10 lg:leading-11 lg:mb-10 mb-8';
 
 const h2 =
 	'text-xl lg:text-2xl font-bold leading-8 lg:leading-9 lg:mb-4 mb-3 lg:mt-8 mt-7';
@@ -18,6 +18,8 @@ const code = 'dark:text-red-400 text-red-600';
 
 const p = 'leading-6 mb-4 lg:text-lg lg:leading-7 lg:mb-5';
 
+const a = 'underline';
+
 export const markdownStyles = {
 	h1,
 	h2,
@@ -26,6 +28,7 @@ export const markdownStyles = {
 	ul,
 	code,
 	p,
+	a,
 } as const satisfies {
 	[key: keyof MDXComponents]: string;
 };
