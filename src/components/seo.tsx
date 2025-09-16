@@ -23,7 +23,10 @@ export const Seo = ({ title, description }: Props) => {
 
 	return (
 		<>
-			<title>{seo.title}</title>
+			<title>
+				{seo.title ? `${seo.title} | ` : ''}
+				{defaultTitle}
+			</title>
 			{seo.description && (
 				<meta name="description" content={seo.description} />
 			)}

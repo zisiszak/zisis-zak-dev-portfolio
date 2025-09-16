@@ -122,7 +122,7 @@ const ProjectPage = ({
 };
 
 export const Head = ({ data }: HeadProps<Queries.ProjectByIdQuery>) => (
-	<Seo title={data?.mdx?.frontmatter?.title ?? undefined}></Seo>
+	<Seo title={data?.mdx?.frontmatter?.title!}></Seo>
 );
 
 export const query = graphql`
