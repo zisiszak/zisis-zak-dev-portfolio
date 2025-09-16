@@ -1,5 +1,5 @@
 ---
-title: 'Media Server'
+title: 'Media server'
 technologies:
     [
         'TypeScript',
@@ -12,6 +12,39 @@ technologies:
         'Kysely',
         'styled-components',
     ]
+heroImage: './hero.jpeg'
+heroImageAlt: 'A special masonry-style grid of images.'
+gallery: [{
+    animatedImage: './experimental-auto-grid.webp',
+    alt: "A video scrolling through a masonry-style collage of images.",
+    caption: "Experimental auto-grid layout"
+},
+{
+    animatedImage: './login-system.webp',
+    alt: "A video showing the login flow.",
+    caption: "Although most of the UI was approached with a 'if it works it works' approach. Though there were some nicer parts."
+},
+{
+    animatedImage: "./transitions-for-fun.webp",
+    alt: "A video demonstrating a hover effect.",
+    caption: "This was 80% of where I wanted it to be. It was an impulse transition decision, to be fair."
+},
+{
+    animatedImage: "./tag-filtering.webp",
+    alt: "A video demonstrating tag filtering in use.",
+    caption: "Tag filtering was one of a few filtering parameters available."
+},
+{
+    animatedImage: "./setting-tags.webp",
+    alt: "A video demonstrating tags being set on image content.",
+    caption: "The UI for this definitely needed some touching up, but it worked."
+},
+{
+    animatedImage: "./rating-and-favourite.webp",
+    alt: "A video demonstrating content being rated and favourited.",
+    caption: "These metadata changes would result in optimistic state updates before receiving confirmation from the server. This was a custom implementation for the fun of it. Ignore the horrid spacing issues."
+}
+]
 ---
 
 This project spawned out of my desire to learn. I needed a concept to start and decided on a Node/Express HTTP media server that would serve videos and photos to a web frontend. Importantly, I wanted to do as much as I could from scratch.

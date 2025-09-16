@@ -1,7 +1,41 @@
 ---
 title: 'react-keyboard-experiment'
-technologies: ['TypeScript', 'React']
+technologies: ['TypeScript', 'React', 'CSS']
 repositoryUrl: 'https://github.com/zisiszak/react-keyboard-experiment'
+heroImage: './hero.png'
+heroImageAlt: 'A screenshot of the keyboard UI'
+gallery:
+    [
+        {
+            animatedImage: './layout-remapping.webp',
+            alt: 'Layout remapping demonstration with keyboard UI',
+            caption: 'Visual layout remapping displays where physical keypresses would occur for the selected layout.',
+        },
+        {
+            animatedImage: './relevant-symbol-highlighting.webp',
+            alt: 'Relevant symbol highlighting demonstration with keyboard UI',
+            caption: 'Relevant symbols are highlighted when a key is pressed.',
+        },
+        {
+            animatedImage: './shift-alternating.webp',
+            alt: 'Shift alternating demonstration with keyboard UI',
+            caption: 'Holding shift affects keys displayed.',
+        },
+        {
+            animatedImage: './typing-example.webp',
+            alt: 'Typing demonstration with keyboard UI',
+            caption: 'A typing demo.',
+        },
+    ]
 ---
 
 A visual representation of a keyboard that responds to user input.
+
+To improve responsiveness, I used some CSS tricks to alternate keycap styles. This removed the need to re-render keys, making for a very smooth experience.
+
+## Features
+
+- Alphanumeric and non-alphanumeric keys (TAB, CAPS-LOCK, CTRL, etc.) show when pressed.
+- Visual updates to indicate key presses don't trigger re-renders of individual keys.
+- Multiple key presses work as expected.
+- Holding shift updates symbols (though CAPS-LOCK doesn't, whoops).
