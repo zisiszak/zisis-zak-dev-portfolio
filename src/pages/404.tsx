@@ -1,51 +1,23 @@
-import * as React from "react";
-import { Link, HeadFC, PageProps } from "gatsby";
-
-// TODO: Customise this
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import { Link, HeadFC, PageProps } from 'gatsby';
 
 const NotFoundPage: React.FC<PageProps> = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+	return (
+		<main className="p-4 md:p-6 h-svh">
+			<div className="border-2 dark:border-amber-50 border-neutral-900 w-full h-full text-center flex items-center justify-center flex-col">
+				<h1 className="text-6xl md:text-7xl">404</h1>
+				<p className="md:text-lg">"Not Found"</p>
+				<Link
+					className="px-5 py-1.5 md:px-6 md:py-2 md:text-lg font-bold border-2 dark:border-amber-50 border-neutral-900 mt-4 hover:border-red-600 dark:hover:border-red-400 active:opacity-50"
+					to="/"
+				>
+					Go home
+				</Link>
+			</div>
+		</main>
+	);
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <title>404: Not found</title>;

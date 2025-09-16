@@ -7,18 +7,27 @@ export const Layout = ({ children }: React.PropsWithChildren) => {
 
 	return (
 		<>
-			<nav className="px-6 py-6 lg:py-8 bg-amber-50 border-b-4 dark:bg-neutral-900 dark:text-amber-50 dark:border-amber-50">
+			<div className="px-6 pt-6 md:pt-8">
 				<div className="mx-auto max-w-3xl">
-					<header>
-						<h1 className="text-xl lg:text-2xl leading-6 lg:leading-8 font-bold relative text-center">
-							{siteTitle}
-						</h1>
-						<p className="lg:text-lg text-center">by {author}</p>
-					</header>
-					<Link to="/projects">Projects</Link>
+					<nav className="flex flex-row gap-8 justify-between items-center">
+						<div>
+							<h1 className="text-xl md:text-2xl leading-6 md:leading-8 font-bold relative ">
+								{siteTitle}
+							</h1>
+							<p className="md:text-lg">by {author}</p>
+						</div>
+						<Link
+							activeClassName="dark:bg-amber-50 dark:text-neutral-900 bg-neutral-900 text-amber-50 active:opacity-100 dark:hover:border-amber-50 hover:border-neutral-900 dark:border-amber-50 border-neutral-900"
+							className="border-2 dark:border-amber-50 border-neutral-900 font-bold px-4 py-1 active:opacity-50 dark:hover:border-red-400 md:text-base text-sm hover:border-red-600 relative"
+							to="/"
+						>
+							Home
+						</Link>
+					</nav>
+					<nav className="flex flex-row gap-4 mt-4 border-b-2 dark:border-amber-50 border-neutral-900 "></nav>
 				</div>
-			</nav>
-			<main className="px-6 lg:py-20 py-12">{children}</main>
+			</div>
+			<main className="px-6 md:py-20 py-8">{children}</main>
 		</>
 	);
 };
