@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
+	pathPrefix: '/zisis-zak-dev-portfolio',
 	siteMetadata: {
 		title: 'A Portfolio',
 		author: 'Zisis Zak Tsiouklas',
@@ -60,6 +61,17 @@ const config: GatsbyConfig = {
 				rule: {
 					include: /\.inline\.svg$/,
 				},
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'A Portfolio by Zisis Zak',
+				short_name: 'A Portfolio',
+				start_url: '/',
+				background_color: '#171717',
+				theme_color: '#171717',
+				icon: 'src/images/icon.png',
 			},
 		},
 	],
