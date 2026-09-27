@@ -1,0 +1,30 @@
+---
+title: 'Manygram'
+technologies: ['TypeScript', 'React', 'Node.js']
+heroImage: './manygram_dark_mode.webp'
+heroImageAlt: "Manygram screenshot"
+gallery:
+    [
+        {
+            image: './manygram_dark_mode.webp',
+            alt: 'Manygram screenshot',
+        },
+    ]
+---
+
+A daily word game with a goal of finding words using the provided letters, and choosing the best ones to reach the target score.
+
+Currently in a demo state.
+
+[Try it out here](https://whatgames.netlify.app/manygram).
+
+## Interesting Features
+
+### Automatic puzzle generation using a provided word list
+
+- Tree-based max-score + target score calculations
+- Optimised with bitmasks!
+
+### LLM-based word culling (filters inappropriate/archaic/esoteric words)
+
+- Created to automate the need to manually filter out the many hundreds of words per puzzle that wouldn't be suited for a casual word game.
